@@ -1,0 +1,20 @@
+section{
+  height: 100vh;
+  position: relative;
+  translate:0 0;
+  &.section02{
+    height:200vh;
+  }
+}
+
+h2{
+  font-size: 5vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+#container{
+  width: 100vw;
+  height: 100vh;
+}

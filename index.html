@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STC</title>
+  <link rel="shortcut icon" href="./resource/images/logo_STC_fabicon.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="./resource/css/index.css">
+  
+  <script src="./resource/plugins/jquery-3.3.1.min.js"></script>
+  <script src="./resource/plugins/gsap.js"></script>
+  <script src="./resource/plugins/scrollTrigger.js"></script>
+  <script src="./resource/plugins/smooth-scrollbar.js"></script>
+  <script src="./resource/plugins/barba.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
+  <script src="./resource/js/settings.js"defer></script>
+  <script src="./resource/js/page/about.js" defer></script>
+  <script src="./resource/js/page/service.js" defer></script>
+  <script src="./resource/js/page/reference.js" defer></script>
+  <script src="./resource/js/page/home.js" defer></script>
+  <script src="./resource/js/page/product.js" defer></script>
+  <script src="./resource/js/page/contact.js" defer></script>
+  <script src="./resource/js/barbaConfig.js" defer></script>
+  <script src="./resource/js/global.js" defer></script>
+
+</head>
+<body data-barba="wrapper">
+  <!-- --------------------------------- 로딩 ---------------------------------- -->
+  <div class="loader" style="display: none;">
+    <h1 class="loader--logo"><img src="./resource/images/logo_STC.svg" alt=""></h1>
+    <div id="status">
+      <progress max="100" value="50"></progress>
+    </div>
+  </div>
+  <!-- --------------------------------- /로딩 --------------------------------- -->
+  
+  <!-- ------------------------------- header -------------------------------- -->
+  <header id="header">
+    <h1 id="logo"><a href="index.html"><img src="./resource/images/logo_STC_white.svg" alt="" style="width:68px;height:59px;"></a></h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="reference.html">Reference</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button type="butotn"></button>
+  </header>
+  <!-- ------------------------------- /header ------------------------------- -->
+
+  <!-- ----------------------------- container ------------------------------ -->
+  <div id="container">
+    <div id="main" data-barba="container" data-barba-namespace="home">
+      <section class="section section01">
+        <div id="videoWrap">
+          <video autoplay="" muted="" loop="" playinline="">
+            <source
+              src="./resource/video/3141207-uhd_3840_2160_25fps.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div id="textWrap">
+          <strong>행복한 내일&nbsp;&middot;&nbsp;스마트한 삶의 창조</strong>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Quidem aperiam fugiat minus optio sed corrupti, <br>vitae rerum mollitia repellendus accusamus repellat magni ipsam quos</p>
+        </div>
+      </section>
+      <section class="section section02">
+        <div class="parallax-wrap">
+          <div class="parallax parallax--1" data-depth="0.1"></div>
+          <div class="parallax parallax--2" data-depth="0.1"></div>
+          <div class="parallax parallax--3" data-depth="0.1"></div>
+          <div class="parallax parallax--4" data-depth="0.1"></div>
+          <div class="parallax parallax--5" data-depth="0.4"></div>
+          <div class="parallax parallax--6" data-depth="0.3"></div>
+          
+        </div>
+        <div class="txt">
+          모두 다 행복한 내일을 위해 스마트한 삶을 창조하는 <br>STCreative 입니다.
+        </div>
+      </section>
+      <section class="section section03"></section>
+      <section class="section section04"></section>
+    </div>
+  </div>
+  <!-- ----------------------------- /container ------------------------------ -->
+
+  <!-- ------------------------------- footer -------------------------------- -->
+  <footer id="footer"></footer>
+  <!-- ------------------------------- /footer ------------------------------- -->
+
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="./resource/js/markers.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+@use "../abstracts/" as *;
+
+$bannerWidth: 100vw;
+$bannerHeight: 100vh;
+
+#videoWrap {
+  width: 100%;
+  height: 100%;
+  video {
+    width: $bannerWidth;
+    height: $bannerHeight;
+    object-fit: cover;
+    position: absolute;
+    @include positionCenter("inline");
+  }
+}
+.txt{
+  display: flex;
+  width:100%;
+  height:100vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left:0;
+  text-align: center;
+}
+.parallax-wrap{
+  position: relative;
+  height:100%;
+  .parallax{
+    background-position: bottom center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height:100%;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left:0;
+    &--1 {
+      background-image: url("/resource/images/FlatCylinder1.svg");
+      background-position: -100px top;
+    }
+    &--2 {
+      background-image: url("/resource/images/FlatCylinder2.svg");
+      background-position: 50% 20%;
+    }
+    &--3 {
+      background-image: url("/resource/images/Thorus1.svg");
+      background-position: 100% 50%;
+    }
+    &--4 {
+      background-image: url("/resource/images/Thorus2.svg");
+      background-position: -20% 40%;
+    }
+    &--5 {
+      background-image: url("/resource/images/FlatCylinder3.svg");
+      background-position: 70% 90%;
+    }
+    &--6 {
+      background-image: url("/resource/images/FlatCylinder4.svg");
+      background-position: 20% 75%;
+    }
+    &--7 {
+      background-image: url("/resource/images/Thorus4.svg");
+      background-position: 100% 0%;
+    }
+    &--8 {
+      background-image: url("/resource/images/FlatCylinder6.svg");
+      background-position: 0% 100%;
+    }
+    &--9 {
+      background-image: url("/resource/images/FlatCylinder7.svg");
+      background-position: 100% 40%;
+    }
+    &--10 {
+      background-image: url("/resource/images/Thorus3.svg");
+      background-position: 45% 100%;
+    }
+    &--11 {
+      background-image: url("/resource/images/FlatCylinder7.svg");
+      background-position: 0 100%;
+    }
+    &--12 {
+      background-image: url("/resource/images/Thorus6.svg");
+      background-position: 100% 100%;
+    }
+  }
+  
+}

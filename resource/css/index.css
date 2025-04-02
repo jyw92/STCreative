@@ -1,0 +1,250 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+/* 구글폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital@1&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css") layer(Reset);
+/* -------------------------------------------------------------------------- */
+/*                                  normalize                                 */
+/* -------------------------------------------------------------------------- */
+input,
+button,
+dialog {
+  border: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+dialog {
+  padding: 0;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 typography                                 */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                  variables                                 */
+/* -------------------------------------------------------------------------- */
+:root {
+  --primary: #6067f3;
+  --secondary: #e8e2da;
+  --white: #fff;
+  --black: #000;
+}
+
+@layer Typography {
+  html {
+    font-size: 62.5%;
+  }
+  @media (min-width: 1500px) and (max-width: 1799px) {
+    html {
+      font-size: 60%;
+    }
+  }
+  body {
+    overflow: hidden;
+    font-size: 1.6rem;
+    color: #222;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    line-height: 1.6;
+  }
+  /* 영어폰트 */
+  .en {
+    font-family: "Public Sans", sans-serif;
+  }
+  .en2 {
+    font-family: "Cormorant Infant", serif;
+  }
+}
+/* -------------------------------------------------------------------------- */
+/*                                   loader                                   */
+/* -------------------------------------------------------------------------- */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.loader--logo {
+  height: 7rem;
+  overflow: hidden;
+}
+.loader--logo img {
+  width: 100%;
+  height: 100%;
+}
+
+#status progress {
+  appearance: none;
+}
+#status progress::-webkit-progress-bar {
+  background: #f0f0f0;
+  border-radius: 5px;
+  border: 1px solid #eeeeee;
+  height: 0.7rem;
+  width: 100%;
+  overflow: hidden;
+}
+#status progress::-webkit-progress-value {
+  background: #3336e4;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   header                                   */
+/* -------------------------------------------------------------------------- */
+#header {
+  position: fixed;
+  display: flex;
+  height: 10rem;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  z-index: 1000;
+  padding-inline: 5.5rem;
+}
+#header nav ul {
+  display: flex;
+  gap: 6.5rem;
+}
+#header nav ul li a {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #fff;
+}
+
+section {
+  height: 100vh;
+  position: relative;
+  translate: 0 0;
+}
+section.section02 {
+  height: 200vh;
+}
+
+h2 {
+  font-size: 5vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#videoWrap {
+  width: 100%;
+  height: 100%;
+}
+#videoWrap video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.txt {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+
+.parallax-wrap {
+  position: relative;
+  height: 100%;
+}
+.parallax-wrap .parallax {
+  background-position: bottom center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+}
+.parallax-wrap .parallax--1 {
+  background-image: url("/resource/images/FlatCylinder1.svg");
+  background-position: -100px top;
+}
+.parallax-wrap .parallax--2 {
+  background-image: url("/resource/images/FlatCylinder2.svg");
+  background-position: 50% 20%;
+}
+.parallax-wrap .parallax--3 {
+  background-image: url("/resource/images/Thorus1.svg");
+  background-position: 100% 50%;
+}
+.parallax-wrap .parallax--4 {
+  background-image: url("/resource/images/Thorus2.svg");
+  background-position: -20% 40%;
+}
+.parallax-wrap .parallax--5 {
+  background-image: url("/resource/images/FlatCylinder3.svg");
+  background-position: 70% 90%;
+}
+.parallax-wrap .parallax--6 {
+  background-image: url("/resource/images/FlatCylinder4.svg");
+  background-position: 20% 75%;
+}
+.parallax-wrap .parallax--7 {
+  background-image: url("/resource/images/Thorus4.svg");
+  background-position: 100% 0%;
+}
+.parallax-wrap .parallax--8 {
+  background-image: url("/resource/images/FlatCylinder6.svg");
+  background-position: 0% 100%;
+}
+.parallax-wrap .parallax--9 {
+  background-image: url("/resource/images/FlatCylinder7.svg");
+  background-position: 100% 40%;
+}
+.parallax-wrap .parallax--10 {
+  background-image: url("/resource/images/Thorus3.svg");
+  background-position: 45% 100%;
+}
+.parallax-wrap .parallax--11 {
+  background-image: url("/resource/images/FlatCylinder7.svg");
+  background-position: 0 100%;
+}
+.parallax-wrap .parallax--12 {
+  background-image: url("/resource/images/Thorus6.svg");
+  background-position: 100% 100%;
+}
+
+/*# sourceMappingURL=index.css.map */
