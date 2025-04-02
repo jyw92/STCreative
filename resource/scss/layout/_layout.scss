@@ -1,5 +1,5 @@
 section{
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   translate:0 0;
   &.section02{
@@ -8,11 +8,12 @@ section{
 }
 
 h2{
-  font-size: 5vw;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
+  line-height: 1.25;
+  // font-size: 5vw;
+  // position: absolute;
+  // left: 50%;
+  // top: 50%;
+  // transform: translate(-50%,-50%);
 }
 #container{
   width: 100vw;

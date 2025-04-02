@@ -44,6 +44,7 @@ function barbaConfig() {
           markers();
           start();
           scrollChkHeaderPaddingX_controller();
+          Splitting();
         },
       },
     ],
