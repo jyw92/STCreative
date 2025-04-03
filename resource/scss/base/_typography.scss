@@ -35,6 +35,11 @@ layer(Reset);
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     line-height: 1.6;
   }
+  /* 스크롤바 숨기기 */
+  .scrollbar-track{
+    opacity: 0 !important;
+  }
+
   /* 영어폰트 */
   .en {
     font-family: "Public Sans", sans-serif;

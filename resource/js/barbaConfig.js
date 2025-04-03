@@ -1,23 +1,3 @@
-function scrollChkHeaderPaddingX_controller(){
-  const windowHeight = innerHeight;
-  const sectionHeightArray = [];
-  const footerHeight = document.getElementById('footer').offsetHeight;
-  const header = document.getElementById('header');
-  gsap.utils.toArray('.section').forEach((section, index) => {
-    const sectionHeight = section.offsetHeight;
-    sectionHeightArray.push(sectionHeight);
-  })
-  let sum = sectionHeightArray.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue
-  }, 0);
-  sum += footerHeight;
-  if(windowHeight < sum){
-    header.style.width = 'calc(100% - 8px)';
-  }else{
-    header.style.width = '100%'
-  }
-}
-
 
 
 function barbaConfig() {
@@ -32,19 +12,21 @@ function barbaConfig() {
     transitions: [
       {
         name: "opacity-transition",
-        leave: ({ current }) => {
+        leave: (data) => {
           //전페이지
-          console.log("current", current)
+          Transition.pageLeave(data);
         },
-        enter({ next }) {
+        enter(data) {
           //현재진입한 페이지지
-          console.log("next" ,next);
+          Transition.pageEnter(data);
         },
         once: () => {
+          Transition.initTransition();
           markers();
           start();
-          scrollChkHeaderPaddingX_controller();
+          // scrollChkHeaderPaddingX_controller();
           Splitting();
+          headerProgress();
         },
       },
     ],

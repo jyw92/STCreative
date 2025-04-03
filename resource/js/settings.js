@@ -1,32 +1,11 @@
-function start() {
-  const sectionColors = [
-    "#f2eee5",
-    "#ffffff",
-    "#c3e2dd",
-    "#6eceda",
-    "#FB9DA7",
-    "#FCCCD4",
-    "#FBDEA2",
-    "#F2E2C6",
-    "#8EB695",
-  ];
 
-  gsap.set(".section", { backgroundColor: gsap.utils.wrap(sectionColors) });
 
-  gsap.utils.toArray(".section").forEach((item, index) => {
-    let h2 = `
-  <i>section${index + 1}</i>
-  `;
-    item.insertAdjacentHTML("beforeend", h2);
-  });
-}
 
 gsap.registerPlugin(ScrollTrigger);
-
-const container = document.querySelector("#container");
+const container = document.querySelector("#scrollContainer");
 const options = {
   damping: 0.1,
-  alwaysShowTracks: true,
+  alwaysShowTracks: false,
 };
 const scrollbar = Scrollbar.init(container, {
   ...options,
@@ -40,7 +19,18 @@ ScrollTrigger.scrollerProxy(container, {
     return scrollbar.scrollTop; // getter
   },
 });
-scrollbar.addListener(ScrollTrigger.update);
+scrollbar.addListener((e) => {
+  ScrollTrigger.update();
+  if (e.offset.y > 0) {
+    if (document.getElementById('header')) {
+      document.getElementById('header').classList.add("--scrolling");
+    }
+  } else {
+    if (document.getElementById('header')) {
+      document.getElementById('header').classList.remove("--scrolling");
+    }
+  }
+});
 
 ScrollTrigger.defaults({ scroller: container });
 
@@ -53,4 +43,5 @@ barba.hooks.after(() => {
   markers();
   start();
   Splitting();
+  headerProgress();
 });
