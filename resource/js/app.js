@@ -1,8 +1,8 @@
 console.log('app');
 gsap.registerPlugin(ScrollTrigger);
 
-import { Home } from './animations/index.js';
-import { Cursor, DevStart, HeaderProgress } from './components/index.js';
+import { Home, Transition } from './animations/index.js';
+import { Cursor, HeaderProgress, DevStart } from './components/index.js';
 
 
 
@@ -18,10 +18,24 @@ import { Cursor, DevStart, HeaderProgress } from './components/index.js';
 
 
 
-
+/* -------------------------------------------------------------------------- */
+/*                                     App                                    */
+/* -------------------------------------------------------------------------- */
 async function App(){
-  barbaConfig();
+  Transition.initTransition();
+  const globalState = await Transition.initTransition();
   Cursor.setCursor();
+  HeaderProgress();
+  Home();
+  DevStart();
 }
+App();
 
-App()
+
+/* -------------------------------------------------------------------------- */
+/*                                    barba                                   */
+/* -------------------------------------------------------------------------- */
+barba.hooks.after(() => {
+  App();
+});
+

@@ -166,3 +166,5 @@ function homeParallax() {
     parallax.to(layer, { y: movement, duration: 2, scale:2, ease: "power3.inOut" }, 0);
   });
 }
+
+export default home ;

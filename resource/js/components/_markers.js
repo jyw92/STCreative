@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- */
+/*                                     비활성                                    */
+/* -------------------------------------------------------------------------- */
 function markers(){
   if (document.querySelector('.gsap-marker-scroller-start')) {
     const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
@@ -8,4 +11,4 @@ function markers(){
   }
 }
 
-export default { markers }
+export default markers; 

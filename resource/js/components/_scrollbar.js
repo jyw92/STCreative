@@ -1,3 +1,7 @@
+
+/* -------------------------------------------------------------------------- */
+/*                                    비활성                                    */
+/* -------------------------------------------------------------------------- */
 function initScrollBar() {
   const container = document.querySelector("#scrollContainer");
   const options = {
@@ -18,15 +22,16 @@ function initScrollBar() {
     },
   });
   scrollbar.addListener(ScrollTrigger.update);
-  ScrollTrigger.defaults({ scroller: scroller });
+  ScrollTrigger.defaults({ scroller: container });
   showMarkers(scrollbar);
 }
 function showMarkers(scrollbar) {
-  if (document.querySelector(".gsap-marker-scroller-start")) {
+  if (document.querySelector('.gsap-marker-scroller-start')) {
     const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-    scrollbar.addListener(({ offset }) =>
-      gsap.set(markers, { marginTop: -offset.y })
-    );
+
+    scrollbar.addListener(({ offset }) => {
+      gsap.set(markers, { marginTop: -offset.y });
+    });
   }
 }
 

@@ -20,4 +20,4 @@ function devStart() {
     item.insertAdjacentHTML("beforeend", h2);
   });
 }
-export default { devStart };
+export default devStart;

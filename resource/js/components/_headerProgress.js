@@ -6,4 +6,4 @@ function headerProgress() {
   });
 }
 
-export default { headerProgress };
+export default headerProgress;
