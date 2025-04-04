@@ -1,7 +1,7 @@
 /* -------------------------------------------------------------------------- */
 /*                                     비활성                                    */
 /* -------------------------------------------------------------------------- */
-function markers(){
+function markers(scrollbar){
   if (document.querySelector('.gsap-marker-scroller-start')) {
     const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
 

@@ -1,7 +1,4 @@
 
-/* -------------------------------------------------------------------------- */
-/*                                    비활성                                    */
-/* -------------------------------------------------------------------------- */
 function initScrollBar() {
   const container = document.querySelector("#scrollContainer");
   const options = {

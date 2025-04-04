@@ -1,8 +1,3 @@
-
-
-
-
-
 /* -------------------------------------------------------------------------- */
 /*                                Global State                                */
 /* -------------------------------------------------------------------------- */
@@ -30,10 +25,12 @@ async function initTransition() {
 /* -------------------------------------------------------------------------- */
 /*                                  ScrollBar                                 */
 /* -------------------------------------------------------------------------- */
+
 async function getScrollbar() {
   scrollContainer = document.getElementById("scrollContainer");
   const options = {
     damping: 0.1,
+    delegateTo: document,
     alwaysShowTracks: false,
   };
   const scrollbar = Scrollbar.init(scrollContainer, {
@@ -51,23 +48,24 @@ async function getScrollbar() {
     ScrollTrigger.update();
     globalState.offset = e.offset;
     if (e.offset.y > 0) {
-      // globalState.isScrolling = true;
-      headerDOM.header.classList.add("-scrolling");
+      globalState.isScrolling = true;
+      headerDOM.header.classList.add("--scrolling");
     } else {
-      // globalState.isScrolling = false;
-      headerDOM.header.classList.remove("-scrolling");
+      globalState.isScrolling = false;
+      headerDOM.header.classList.remove("--scrolling");
     }
   });
   
   ScrollTrigger.defaults({ scroller: scrollContainer });
-  showMarkers();
+  showMarkers(scrollContainer);
   return scrollbar;
 }
 
-function showMarkers() {
+function showMarkers(scrollbar) {
+  console.log("scrollbar", scrollbar)
   if (document.querySelector('.gsap-marker-scroller-start')) {
       const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-      bodyScrollBar.addListener(({ offset }) =>
+      scrollbar.addListener(({ offset }) =>
           gsap.set(markers, { marginTop: -offset.y })
       );
   }
