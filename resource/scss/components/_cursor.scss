@@ -1,0 +1,30 @@
+.mf-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 250;
+    direction: ltr;
+    contain: layout style size;
+    pointer-events: none;
+    transition: opacity .3s,color .4s
+}
+
+.mf-cursor:before {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    transform: scale(0.2);
+    background: var(--color-primary-400, #2B4793);
+    border-radius: 50%;
+    transition: transform .25s ease-in-out,opacity .1s
+}
+
+@media screen and (hover: none)and (pointer: coarse) {
+    .mf-cursor:before {
+        transform:scale(0) !important
+    }
+}

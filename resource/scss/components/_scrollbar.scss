@@ -1,0 +1,15 @@
+.scrollbar-track-y {
+  background-color: transparent !important;
+}
+
+.scrollbar-thumb {
+//   background-color: clr("primary-600") !important;
+  cursor: grab;
+}
+
+[data-scrollbar-container] {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
+}

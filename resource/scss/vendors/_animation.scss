@@ -1,0 +1,92 @@
+.transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 800;
+    pointer-events: none
+}
+
+.transition__screen {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    will-change: top;
+    background-color: var(--color-primary-400)
+}
+
+.transition__background {
+    width: 100%
+}
+
+.transition__background path {
+    fill: var(--color-primary-400);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.transition__intro {
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none
+}
+
+.transition__intro svg {
+    width: 30vw
+}
+
+@media(max-width: 768px) {
+    .transition__intro svg {
+        width:50vw
+    }
+}
+
+.transition__intro svg path {
+    fill: #fff
+}
+
+.no-loading-screen {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    background-color: var(--color-primary-400);
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0) skewX(0);
+    transform-origin: top left
+}
+
+.no-loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+    pointer-events: none
+}
+
+.no-transition {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}

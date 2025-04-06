@@ -1,0 +1,26 @@
+section{
+  min-height: 100vh;
+  position: relative;
+  translate:0 0;
+  &.section02{
+    height:200vh;
+  }
+}
+
+h2{
+  line-height: 1.25;
+  // font-size: 5vw;
+  // position: absolute;
+  // left: 50%;
+  // top: 50%;
+  // transform: translate(-50%,-50%);
+}
+#scrollContainer{
+  width: 100vw;
+  height: 100vh;
+}
+#footer{
+  width:100vw;
+  height:300px;
+  background-color: blue;
+}
