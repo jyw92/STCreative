@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D 큐브 스크롤 애니메이션</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      .scroll-section {
+        height: 300vh; /* 스크롤 영역 확보 */
+        position: relative;
+      }
+
+      .content {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .bottom-content {
+        margin-top: 100vh;
+      }
+
+      h1,
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+
+      /* 큐브 컨테이너 */
+      .cube-container {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        perspective: 1000px;
+        width: 200px;
+        height: 200px;
+      }
+
+      /* 큐브 */
+      .cube {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+      }
+
+      /* 큐브 면 공통 스타일 */
+      .face {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(0, 0, 0, 0); /* 투명한 면 */
+        border: 4px solid #0066ff; /* 파란색 테두리 */
+        box-sizing: border-box;
+      }
+
+      /* 각 면의 위치 */
+      .front {
+        transform: translateZ(100px);
+      }
+
+      .back {
+        transform: rotateY(180deg) translateZ(100px);
+      }
+
+      .right {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+
+      .left {
+        transform: rotateY(-90deg) translateZ(100px);
+      }
+
+      .top {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+
+      .bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="scroll-section">
+        <div class="content">
+          <h1>스크롤을 내려보세요</h1>
+          <p>3D 큐브가 회전합니다</p>
+        </div>
+
+        <div class="cube-container">
+          <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
+        </div>
+
+        <div class="content bottom-content">
+          <h2>스크롤 애니메이션 완료</h2>
+          <p>큐브 회전이 끝났습니다</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GSAP 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- 메인 스크립트 -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // 문서가 로드된 후 실행
+      document.addEventListener('DOMContentLoaded', () => {
+        // 큐브 요소 선택
+        const cube = document.querySelector('.cube');
+
+        // 스크롤 트리거 애니메이션 설정
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.scroll-section',
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 1, // 스크롤 속도에 따라 애니메이션 속도 조절
+            // markers: true, // 개발 시 마커 표시 (필요시 주석 해제)
+          },
+        });
+
+        // X, Y, Z축 회전 애니메이션 추가
+        tl.to(cube, {
+          rotateX: 360,
+          rotateY: 720,
+          rotateZ: 360,
+          ease: 'none',
+          duration: 3,
+        });
+
+        // 큐브 컨테이너 표시/숨김 애니메이션
+        gsap.set('.cube-container', {autoAlpha: 0});
+
+        gsap.to('.cube-container', {
+          scrollTrigger: {
+            trigger: '.scroll-section',
+            start: 'top 80%',
+            end: 'bottom 20%',
+            toggleActions: 'play reverse play reverse',
+          },
+          autoAlpha: 1,
+          duration: 0.5,
+        });
+
+        // 추가 애니메이션: 스크롤 속도에 따른 큐브 크기 변화
+        ScrollTrigger.create({
+          trigger: '.scroll-section',
+          start: 'top top',
+          end: 'bottom bottom',
+          onUpdate: (self) => {
+            // 스크롤 진행률에 따라 큐브 크기 변화 (80% ~ 120%)
+            const scale = 0.8 + self.progress * 0.4;
+            gsap.set(cube, {scale: scale});
+
+            // 스크롤 속도에 따라 테두리 색상 변화
+            const scrollSpeed = Math.abs(self.getVelocity() / 1000);
+            const intensity = Math.min(1, scrollSpeed / 5); // 최대 1
+
+            // 파란색에서 보라색으로 변화
+            const blueValue = 255 - Math.floor(intensity * 155);
+            const redValue = Math.floor(intensity * 100);
+
+            const borderColor = `rgb(${redValue}, ${100 - redValue}, ${blueValue})`;
+            gsap.set('.face', {borderColor: borderColor});
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

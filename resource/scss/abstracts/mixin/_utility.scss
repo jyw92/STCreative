@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @use "sass:meta";
+=======
+@use 'sass:meta';
+>>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 
 @mixin fullPage() {
   position: relative;
@@ -7,6 +11,7 @@
 }
 
 @mixin positionCenter($param: null) {
+<<<<<<< HEAD
   @if meta.type-of($param) != "string" or $param == "" or $param == () {
     @error '파라미터는 문자값입니다.';
   }
@@ -17,15 +22,38 @@
     left: 50%;
     transform: translateX(-50%);
   } @else if $param == "all" {
+=======
+  @if meta.type-of($param) != 'string' or $param == '' or $param == () {
+    @error '파라미터는 문자값입니다.';
+  }
+  @if $param == 'block' {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if $param == 'inline' {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $param == 'all' {
+    position: absolute;
+>>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
 }
 
+<<<<<<< HEAD
 @mixin flexCenter($direction:row){
+=======
+@mixin flexCenter($direction: row) {
+>>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: $direction;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
