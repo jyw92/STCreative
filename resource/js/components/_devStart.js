@@ -3,7 +3,7 @@ function devStart() {
     '#ffffff',
     '#ffffff',
     '#ffffff',
-    '#6eceda',
+    'transparent',
     '#FB9DA7',
     '#FCCCD4',
     '#FBDEA2',

@@ -33,3 +33,4 @@ function showMarkers(scrollbar) {
 }
 
 export default { initScrollBar };
+

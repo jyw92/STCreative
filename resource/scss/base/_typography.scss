@@ -42,12 +42,12 @@ layer(Reset);
 
   /* 영어폰트 */
   .en {
-    font-family: "Public Sans", sans-serif;
+    font-family: "Public Sans", sans-serif !important;
   }
   .en2 {
-    font-family: "Cormorant Infant", serif;
+    font-family: "Cormorant Infant", serif !important;
   }
   .en3{
-    font-family: "Archivo",sans-serif
+    font-family: "Archivo",sans-serif !important
   }
 }
