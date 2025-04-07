@@ -1,21 +1,4 @@
-<<<<<<< HEAD
-function home() {
-  console.log("home");
-  homeParallax();
-  spotlightAnimation();
-  heroAnimation();
-  stickScrollIcon(".scroll--view--inner");
-  Particles();
-}
-function stickScrollIcon(param) {
-  gsap.to(param, {
-    top: "88vh",
-    scrollTrigger: {
-      trigger: ".section01--hero",
-      start: "center center",
-=======
-// GSAP 플러그인 등록
-gsap.registerPlugin(ScrollTrigger);
+
 
 /**
  * 홈페이지 메인 애니메이션 초기화 함수
@@ -42,24 +25,10 @@ function stickScrollIcon(selector) {
     scrollTrigger: {
       trigger: '.section01--hero',
       start: 'center center',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
       scrub: true,
     },
   });
 
-<<<<<<< HEAD
-  gsap.fromTo(
-    param,
-    {
-      opacity: 1,
-    },
-    {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: "#footer",
-        start: "top bottom",
-        toggleActions: "restart pause resume reverse",
-=======
   // 푸터에서 아이콘 페이드아웃
   gsap.fromTo(
     selector,
@@ -70,58 +39,10 @@ function stickScrollIcon(selector) {
         trigger: '#footer',
         start: 'top bottom',
         toggleActions: 'restart pause resume reverse',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
       },
     }
   );
 }
-<<<<<<< HEAD
-function spotlightAnimation() {
-  // const mainVis = document.querySelector('.no-main-vis');
-
-  // if (!mainVis) return;
-  gsap.fromTo(
-    ".section01--spotlight div",
-    {
-      x: "-75%",
-    },
-    {
-      x: "75%",
-      repeat: -1,
-      yoyo: true,
-      duration: 2.5,
-      ease: "none",
-    }
-  );
-}
-function heroAnimation() {
-  const DOM = {
-    area: document.querySelector(".section01--main"),
-    video: document.querySelector(".section01--main--video"),
-    title: gsap.utils.toArray(".section01--hero--title > div"),
-    banner: document.querySelector(".section01--main--video--banner"),
-    bannerTitle: document.querySelector(
-      ".section01--main--video--banner--title"
-    ),
-    bannerGallery: document.querySelector(
-      ".section01--main--video--banner--vertical"
-    ),
-    galleryItem: document.querySelector(".vertical--item"),
-    galleryItems: gsap.utils.toArray(
-      ".section01--main--video--banner--vertical > .vertical--item"
-    ),
-  };
-  gsap.set(DOM.area,{height:DOM.bannerGallery.offsetHeight * DOM.galleryItems.length})
-  // gsap.set(DOM.area,{height:'30000px'})
-  const targets = gsap.utils.toArray(".split");
-  const targets2 = gsap.utils.toArray(".split2");
-  function split(targets) {
-    targets.forEach((target) => {
-      let SplitClient = new SplitType(target, { type: "lines, words, chars" });
-      let lines = SplitClient.lines;
-      let words = SplitClient.words;
-      let chars = SplitClient.chars;
-=======
 
 /**
  * 스포트라이트 애니메이션
@@ -171,24 +92,11 @@ function heroAnimation() {
     targets.forEach((target) => {
       const SplitClient = new SplitType(target, {type: 'lines, words, chars'});
       const chars = SplitClient.chars;
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 
       gsap.from(chars, {
         yPercent: 100,
         autoAlpha: 0,
         duration: 1,
-<<<<<<< HEAD
-        ease: "circ.out",
-        stagger: {
-          amount: 1,
-          from: "random",
-        },
-        scrollTrigger: {
-          trigger: target,
-          start: "top bottom",
-          end: "+=400",
-          // markers: true
-=======
         ease: 'circ.out',
         stagger: {
           amount: 1,
@@ -198,20 +106,10 @@ function heroAnimation() {
           trigger: target,
           start: 'top bottom',
           end: '+=400',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
         },
       });
     });
   }
-<<<<<<< HEAD
-  split(targets);
-  gsap.set(DOM.banner,{y: 100 });
-  ScrollTrigger.create({
-    id: "section01--main",
-    trigger: DOM.area,
-    start: "top top",
-    end: "+=300%;",
-=======
 
   // 초기 텍스트 분할 실행
   split(targets);
@@ -225,19 +123,10 @@ function heroAnimation() {
     trigger: DOM.area,
     start: 'top top',
     end: 'bottom bottom',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
     pin: true,
     pinSpacing: false,
     invalidateOnRefresh: true,
     anticipatePin: 1,
-<<<<<<< HEAD
-    // markers:true
-  });
-
-  let tl;
-  ScrollTrigger.matchMedia({
-    "(min-width: 769px)": function () {
-=======
   });
 
   // 반응형 애니메이션 설정
@@ -245,30 +134,10 @@ function heroAnimation() {
   ScrollTrigger.matchMedia({
     // 데스크탑 애니메이션
     '(min-width: 769px)': () => {
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
       tl = gsap
         .timeline({
           scrollTrigger: {
             trigger: DOM.area,
-<<<<<<< HEAD
-            start: "20% bottom",
-            end: "100% bottom",
-            scrub: 1,
-            id: "main-ani",
-            // markers: true,
-          },
-        })
-        .to(DOM.video, {
-          clipPath: "circle(10% at 50% 50%)",
-          duration: 1,
-        })
-        .to(DOM.video, {
-          clipPath: "circle(100% at 50% 50%)",
-          duration: 1.5,
-        });
-    },
-    "(max-width: 768px)": function () {
-=======
             start: '20% bottom',
             end: 'bottom bottom',
             scrub: 1,
@@ -286,26 +155,10 @@ function heroAnimation() {
     },
     // 모바일 애니메이션
     '(max-width: 768px)': () => {
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
       tl = gsap
         .timeline({
           scrollTrigger: {
             trigger: DOM.area,
-<<<<<<< HEAD
-            start: "20% bottom",
-            end: "100% bottom",
-            scrub: 1,
-            id: "main-ani",
-            // markers: true,
-          },
-        })
-        .to(DOM.video, {
-          clipPath: "circle(20% at 50% 50%)",
-          duration: 1,
-        })
-        .to(DOM.video, {
-          clipPath: "circle(100% at 50% 50%)",
-=======
             start: '20% bottom',
             end: '100% bottom',
             scrub: 1,
@@ -318,14 +171,10 @@ function heroAnimation() {
         })
         .to(DOM.video, {
           clipPath: 'circle(100% at 50% 50%)',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
           duration: 1.5,
         });
     },
   });
-<<<<<<< HEAD
- 
-=======
   // 배너 애니메이션 추가
   gsap.from(
     DOM.titleLine,
@@ -337,55 +186,17 @@ function heroAnimation() {
     },
     '+=2'
   );
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
   tl.to(
     DOM.banner,
     {
       autoAlpha: 1,
       y: 120,
       duration: 1.5,
-<<<<<<< HEAD
-      ease: "power4.inOut",
-=======
       ease: 'power4.inOut',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
       once: () => {
         split(targets2);
       },
     },
-<<<<<<< HEAD
-    "<"
-  );
-  tl.to(
-    DOM.bannerGallery,
-    {
-      y: innerHeight - DOM.galleryItems.length * DOM.bannerGallery.offsetHeight,
-      duration: 3, 
-      ease:'none',
-    },
-    "-=0.5"
-  ).timeScale(0.1);
-
-
-  console.log("DOM.bannerGallery.offsetHeight", DOM.galleryItems.innerHeight);
-}
-function homeParallax() {
-  const parallax = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".section02",
-      start: "top top",
-      end: "+=300%",
-      // markers: true,
-      scrub: true,
-    },
-  });
-
-  const fixedVisualText = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".section02--main--visual__text strong",
-      start: "top top",
-      end: "+=300%",
-=======
     '<'
   )
 
@@ -410,28 +221,12 @@ function homeParallax() {
       trigger: '.section02--main--visual__text strong',
       start: 'top top',
       end: '+=200%',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
       // markers: true,
       scrub: 1,
       pin: true,
     },
   });
 
-<<<<<<< HEAD
-  gsap.utils.toArray(".parallax").forEach((layer) => {
-    const depth = layer.dataset.depth;
-    const movement = -(layer.offsetHeight * depth);
-
-    parallax.to(
-      layer,
-      { y: movement, duration: 2, scale: 2, ease: "power3.inOut" },
-      0
-    );
-  });
-}
-function Particles() {
-  tsParticles.load("tsparticles", {
-=======
   // 큐브 요소 선택
   const cube = document.querySelector('.cube');
   const boxes = document.querySelectorAll('.stc--status__item');
@@ -529,7 +324,6 @@ function Particles() {
  */
 function initParticles(target) {
   tsParticles.load(target, {
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
     fpsLimit: 60,
     backgroundMode: {
       enable: true,
@@ -544,25 +338,10 @@ function initParticles(target) {
         },
       },
       color: {
-<<<<<<< HEAD
-        value: [
-          "#3998D0",
-          "#2EB6AF",
-          "#A9BD33",
-          "#FEC73B",
-          "#F89930",
-          "#F45623",
-          "#D62E32",
-        ],
-      },
-      destroy: {
-        mode: "split",
-=======
         value: ['#3998D0', '#2EB6AF', '#A9BD33', '#FEC73B', '#F89930', '#F45623', '#D62E32'],
       },
       destroy: {
         mode: 'split',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
         split: {
           count: 1,
           factor: {
@@ -584,11 +363,7 @@ function initParticles(target) {
               enable: false,
             },
             destroy: {
-<<<<<<< HEAD
-              mode: "none",
-=======
               mode: 'none',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
             },
             life: {
               count: 1,
@@ -600,17 +375,10 @@ function initParticles(target) {
         },
       },
       shape: {
-<<<<<<< HEAD
-        type: "circle",
-        stroke: {
-          width: 0,
-          color: "#000000",
-=======
         type: 'circle',
         stroke: {
           width: 0,
           color: '#000000',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
         },
         polygon: {
           sides: 5,
@@ -641,26 +409,15 @@ function initParticles(target) {
       },
       collisions: {
         enable: true,
-<<<<<<< HEAD
-        mode: "destroy",
-=======
         mode: 'destroy',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
       },
       move: {
         enable: true,
         speed: 7,
-<<<<<<< HEAD
-        direction: "none",
-        random: false,
-        straight: false,
-        out_mode: "out",
-=======
         direction: 'none',
         random: false,
         straight: false,
         out_mode: 'out',
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
         attract: {
           enable: false,
           rotateX: 600,
@@ -671,8 +428,6 @@ function initParticles(target) {
     detectRetina: true,
   });
 }
-<<<<<<< HEAD
-=======
 
 function galleryAnimation() {
   const section = document.querySelector('.stc-prjIntro');
@@ -759,5 +514,4 @@ function galleryAnimation() {
   });
 }
 
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 export default home;

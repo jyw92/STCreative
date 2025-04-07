@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-@use "sass:meta";
-=======
 @use 'sass:meta';
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 
 @mixin fullPage() {
   position: relative;
@@ -11,18 +7,6 @@
 }
 
 @mixin positionCenter($param: null) {
-<<<<<<< HEAD
-  @if meta.type-of($param) != "string" or $param == "" or $param == () {
-    @error '파라미터는 문자값입니다.';
-  }
-  @if $param == "block" {
-    top: 50%;
-    transform: translateY(-50%);
-  } @else if $param == "inline" {
-    left: 50%;
-    transform: translateX(-50%);
-  } @else if $param == "all" {
-=======
   @if meta.type-of($param) != 'string' or $param == '' or $param == () {
     @error '파라미터는 문자값입니다.';
   }
@@ -36,24 +20,39 @@
     transform: translateX(-50%);
   } @else if $param == 'all' {
     position: absolute;
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
 }
 
-<<<<<<< HEAD
-@mixin flexCenter($direction:row){
-=======
 @mixin flexCenter($direction: row) {
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: $direction;
-<<<<<<< HEAD
 }
-=======
+@mixin a11y-hidden($focus-visible: false, $focus-state-class: "focus") {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip-path: circle(0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+
+  @if $focus-visible {
+    &#{"--" + $focus-state-class}:focus {
+      overflow: visible;
+      position: static;
+      clip: auto;
+      width: auto;
+      height: auto;
+      margin: 0;
+      white-space: normal;
+    }
+  }
 }
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a

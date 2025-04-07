@@ -465,8 +465,6 @@ input[type=search]::-webkit-search-results-decoration {
   z-index: 10;
 }
 
-<<<<<<< HEAD
-=======
 .title--line {
   width: 100%;
   height: 2px;
@@ -474,7 +472,6 @@ input[type=search]::-webkit-search-results-decoration {
   margin: 1rem 0;
 }
 
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 section {
   min-height: 100vh;
   position: relative;
@@ -512,11 +509,7 @@ h2 {
   animation: bounce 0.5s ease infinite;
 }
 .page--home .section01 {
-<<<<<<< HEAD
-  height: 450vh;
-=======
   min-height: 100vh;
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 }
 .page--home .section01--spotlight {
   position: absolute;
@@ -526,11 +519,7 @@ h2 {
   height: 100vh;
   background-color: var(--color-base-black, #000);
   overflow: hidden;
-<<<<<<< HEAD
-  max-width: 1024px;
-=======
   max-width: 1440px;
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
   left: 50%;
   width: 100%;
   transform: translateX(-50%);
@@ -544,11 +533,7 @@ h2 {
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
-<<<<<<< HEAD
-  background: radial-gradient(50% 50% at 50% 50%, #2B4793 0%, rgba(133, 134, 216, 0.5) 50%, rgba(217, 217, 217, 0) 100%);
-=======
   background: radial-gradient(50% 50% at 50% 50%, #2b4793 0%, rgba(133, 134, 216, 0.5) 50%, rgba(217, 217, 217, 0) 100%);
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 }
 .page--home .section01--hero {
   background-color: var(--color-base-white, #fff);
@@ -598,18 +583,11 @@ h2 {
   will-change: transform;
 }
 .page--home .section01--main--video--overlay {
-<<<<<<< HEAD
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-=======
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.5;
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
   width: 100%;
   height: 100%;
   background-color: var(--color-base-black, #000);
@@ -625,20 +603,13 @@ h2 {
   z-index: 1000;
 }
 .page--home .section01--main--video--banner > div {
-<<<<<<< HEAD
-  width: 50%;
-=======
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
   min-height: 100vh;
   display: flex;
 }
 .page--home .section01--main--video--banner--title {
   background-color: transparent;
   position: relative;
-<<<<<<< HEAD
-=======
   width: 70%;
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 }
 .page--home .section01--main--video--banner--title h3 {
   width: 100%;
@@ -651,9 +622,6 @@ h2 {
   text-align: center;
   font-weight: 700;
 }
-<<<<<<< HEAD
-.page--home .section01--main--video--banner--vertical {
-=======
 .page--home .section01--main--video--banner--title .title--line {
   position: absolute;
   margin: 1rem 0;
@@ -665,7 +633,6 @@ h2 {
 }
 .page--home .section01--main--video--banner--vertical {
   width: 30%;
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
   flex-direction: column;
   gap: 2rem;
 }
@@ -674,83 +641,6 @@ h2 {
   border-radius: 1vw;
   overflow: hidden;
 }
-<<<<<<< HEAD
-.page--home .section02--main--visual__text strong {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-align: center;
-}
-.page--home .section02--matin--visual__parallax {
-  position: relative;
-  height: 100%;
-}
-.page--home .section02--matin--visual__parallax .parallax {
-  background-position: bottom center;
-  background-size: auto;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  bottom: 0;
-  left: 0;
-}
-.page--home .section02--matin--visual__parallax .parallax--1 {
-  background-image: url("/resource/images/FlatCylinder1.svg");
-  background-position: -100px top;
-}
-.page--home .section02--matin--visual__parallax .parallax--2 {
-  background-image: url("/resource/images/FlatCylinder2.svg");
-  background-position: 50% 20%;
-}
-.page--home .section02--matin--visual__parallax .parallax--3 {
-  background-image: url("/resource/images/Thorus1.svg");
-  background-position: 100% 50%;
-}
-.page--home .section02--matin--visual__parallax .parallax--4 {
-  background-image: url("/resource/images/Thorus2.svg");
-  background-position: -20% 40%;
-}
-.page--home .section02--matin--visual__parallax .parallax--5 {
-  background-image: url("/resource/images/FlatCylinder3.svg");
-  background-position: 70% 90%;
-}
-.page--home .section02--matin--visual__parallax .parallax--6 {
-  background-image: url("/resource/images/FlatCylinder4.svg");
-  background-position: 20% 75%;
-}
-.page--home .section02--matin--visual__parallax .parallax--7 {
-  background-image: url("/resource/images/Thorus4.svg");
-  background-position: 100% 0%;
-}
-.page--home .section02--matin--visual__parallax .parallax--8 {
-  background-image: url("/resource/images/FlatCylinder6.svg");
-  background-position: 0% 100%;
-}
-.page--home .section02--matin--visual__parallax .parallax--9 {
-  background-image: url("/resource/images/FlatCylinder7.svg");
-  background-position: 100% 40%;
-}
-.page--home .section02--matin--visual__parallax .parallax--10 {
-  background-image: url("/resource/images/Thorus3.svg");
-  background-position: 45% 100%;
-}
-.page--home .section02--matin--visual__parallax .parallax--11 {
-  background-image: url("/resource/images/FlatCylinder7.svg");
-  background-position: 0 100%;
-}
-.page--home .section02--matin--visual__parallax .parallax--12 {
-  background-image: url("/resource/images/Thorus6.svg");
-  background-position: 100% 100%;
-=======
 .page--home .section01--main--video--banner--vertical .vertical--item img {
   display: block;
 }
@@ -860,7 +750,6 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
->>>>>>> aee7a308694bd01496397285d79ca06ea4c0ce6a
 }
 
 .transition {
