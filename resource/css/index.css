@@ -86,6 +86,16 @@ input[type=search]::-webkit-search-results-decoration {
   .en3 {
     font-family: "Archivo", sans-serif !important;
   }
+  .gsap-marker-start,
+  .gsap-marker-end,
+  .gsap-marker-scroller-start,
+  .gsap-marker-scroller-end {
+    z-index: 9999 !important;
+    pointer-events: all;
+  }
+  [class*=gsap-marker] {
+    z-index: 9999 !important;
+  }
 }
 /* -------------------------------------------------------------------------- */
 /*                                   loader                                   */
@@ -746,9 +756,6 @@ section {
   flex-direction: column;
   justify-content: center;
 }
-.page--home .section04 {
-  padding-bottom: 3000px;
-}
 .page--home .section04.awsome {
   overflow: hidden;
   height: 100vh;
@@ -777,10 +784,17 @@ section {
   color: #000;
   font-weight: 700;
 }
+.page--home .section04 .awsome--title .a {
+  font-size: 10rem;
+}
 .page--home .section04 .awsome--title .en2 {
-  font-size: 22rem;
+  font-size: 25rem;
 }
 .page--home .section04 .workList {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 70%;
   margin: 0 auto;
   display: flex;
@@ -791,12 +805,15 @@ section {
 }
 .page--home .section04 .workList li {
   width: 45%;
+  border-radius: 2vw;
+  overflow: hidden;
 }
 .page--home .section04 .workList li:nth-child(2n) {
-  transform: translateY(-20rem);
+  transform: translateY(-40rem);
 }
 .page--home .section04 .workList li a {
   position: relative;
+  background-color: #fff;
   display: block;
 }
 .page--home .section04 .workList li a::after {
@@ -887,10 +904,17 @@ section {
   width: 16.8rem;
   height: 16.8rem;
 }
+.page--home .section04 .workList li a .textBox {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-block-start: 1rem;
+}
 .page--home .section04 .workList li a .textBox h3 {
   font-size: 3.5rem;
   font-weight: normal;
-  margin-block: 20px 5px;
 }
 .page--home .section04 .workList li a .textBox .info {
   display: flex;

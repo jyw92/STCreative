@@ -25,14 +25,19 @@
     transform: translate(-50%, -50%);
   }
 }
-
+@mixin fixedCenter() {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 @mixin flexCenter($direction: row) {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: $direction;
 }
-@mixin a11y-hidden($focus-visible: false, $focus-state-class: "focus") {
+@mixin a11y-hidden($focus-visible: false, $focus-state-class: 'focus') {
   overflow: hidden;
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -45,7 +50,7 @@
   white-space: nowrap;
 
   @if $focus-visible {
-    &#{"--" + $focus-state-class}:focus {
+    &#{'--' + $focus-state-class}:focus {
       overflow: visible;
       position: static;
       clip: auto;
