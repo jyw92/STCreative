@@ -1,4 +1,4 @@
-@use "../abstracts/" as *;
+@use '../abstracts/' as *;
 
 .page--home {
   @keyframes bounce {
@@ -17,6 +17,15 @@
 
     100% {
       transform: translateX(-50%);
+    }
+  }
+  @keyframes rolling-rtl {
+    0% {
+      transform: translateX(-50%);
+    }
+
+    100% {
+      transform: translateX(0%);
     }
   }
   .bounce {
@@ -98,7 +107,7 @@
           will-change: transform;
         }
         &--overlay {
-          @include positionCenter("all");
+          @include positionCenter('all');
           opacity: 0.5;
           width: 100%;
           height: 100%;
@@ -267,17 +276,38 @@
   // }
 
   .section02 {
-    flex: none;
     display: grid;
-    place-items: center;
-    line-height: 1.2;
-    grid-template-areas:
-      "title"
-      "layout"
-      "...";
-    /* grid-template-rows: 8vw auto 8vw; */
-    gap: 2rem;
     z-index: 110;
+    &.is-active {
+      background: #000 !important;
+      transition: background 0.5s ease;
+    }
+    &.is-active p {
+      color: #fff;
+    }
+
+    &.is-active .content__text-tiny {
+      color: #fff;
+    }
+
+    .content__img {
+      &.content__img--2 {
+        --img-width: 100vw;
+        --img-height: 100vh;
+      }
+      --img-width: 100vw;
+      --img-height: 40vh;
+      --img-ar: auto;
+      --img-inner-margin-x: 0px;
+      --img-inner-margin-y: 0px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      width: var(--img-width);
+      height: var(--img-height);
+      aspect-ratio: var(--img-ar);
+    }
     h1.rollingTxt {
       width: 100%;
       position: absolute;
@@ -297,28 +327,18 @@
         animation: rolling 30s linear infinite;
       }
       &.rtl {
+        top: auto;
+        bottom: 0;
         span {
           animation: rolling-rtl 30s linear infinite;
         }
       }
     }
+
     .content__img-wrap {
       grid-area: layout;
     }
-    .content__img {
-      --img-width: 100vw;
-      --img-height: 40vh;
-      --img-ar: auto;
-      --img-inner-margin-x: 0px;
-      --img-inner-margin-y: 0px;
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      place-items: center;
-      width: var(--img-width);
-      height: var(--img-height);
-      aspect-ratio: var(--img-ar);
-    }
+
     .content__img-inner {
       grid-area: 1 / -1;
       width: calc(100% + var(--img-inner-margin-x) * 2);
@@ -327,12 +347,13 @@
       background-position: 50% 50%;
       display: flex;
       align-items: center;
-      &--hidden {
-        opacity: 0;
-      }
     }
+    .content__img-inner--hidden {
+      opacity: 0;
+    }
+
     .content__text {
-      font-family: "Codec";
+      font-family: 'Codec';
       position: relative;
       z-index: 100;
       grid-area: title;
@@ -344,6 +365,37 @@
       font-weight: 900;
       line-height: 1;
       padding: 0;
+      &.content__text--left {
+        justify-self: start;
+        padding: 3rem;
+        grid-area: layout;
+        align-self: center;
+        margin: auto;
+        width: 100%;
+        max-width: 1920px;
+      }
+      span:nth-child(3n) {
+        font-feature-settings: 'ss01' 1;
+      }
+      span {
+        span {
+          display: inline-block;
+          &.whitespace {
+            white-space: pre;
+          }
+        }
+      }
+    }
+    .content__text--large {
+      font-size: 128px;
+    }
+
+    .content__text--center {
+      width: 90%;
+      text-align: left;
+      align-self: stretch;
+      justify-content: space-between;
+      grid-row: 1 / span 1;
     }
     .content__text-tiny {
       text-transform: none;
@@ -414,7 +466,7 @@
           position: relative;
           background-color: #fff;
           &::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
@@ -430,7 +482,7 @@
             position: relative;
             &::before,
             &::after {
-              content: "";
+              content: '';
               border-radius: 100%;
               background-repeat: no-repeat;
               background-position: center;
@@ -439,10 +491,10 @@
               width: 16.8rem;
               height: 16.8rem;
               border: 1px solid var(--color);
-              background-image: url("/resource/images/readMore2.png");
+              background-image: url('/resource/images/readMore2.png');
               background-size: 3.5rem;
               position: absolute;
-              @include positionCenter("all");
+              @include positionCenter('all');
               transform: translate(-50%, -50%) rotate(45deg);
               z-index: 2;
               transition: 0.3s;
@@ -452,10 +504,10 @@
               width: 0rem;
               height: 0rem;
               background-color: var(--color);
-              background-image: url("/resource/images/readMore3.png");
+              background-image: url('/resource/images/readMore3.png');
               background-size: 16rem;
               position: absolute;
-              @include positionCenter("all");
+              @include positionCenter('all');
               -webkit-animation-name: spin;
               animation-name: spin;
               -webkit-animation-duration: 10s;

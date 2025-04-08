@@ -354,7 +354,7 @@ h6 {
   --color-primary-100: #f1edfc;
   --color-primary-200: #dfd4fc;
   --color-primary-300: #9776f5;
-  --color-primary-400: #2B4793;
+  --color-primary-400: #2b4793;
   --color-primary-500: #4726a3;
   --color-primary-600: #1e0c4f;
   --color-base-red: #f53f40;
@@ -5194,8 +5194,8 @@ select::placeholder {
 
 .stc-main-contact__word-wrap {
   overflow: hidden;
-  background-color: var(--color-base-white);
-  border-radius: 7rem;
+  background-color: var(--color-base-white, #fff);
+  border-radius: 1rem;
   max-width: 45rem;
   width: 42rem;
   height: 9.2rem;
@@ -12461,9 +12461,9 @@ button[type='submit']:disabled {
   transform: translate(-50%, -50%);
   width: 1018rem;
   height: 64rem;
-  font-family: "Pretendard-Bold";
+  font-family: 'Pretendard-Bold';
   font-size: max(64rem, 32px);
-  color: #0042A0;
+  color: #0042a0;
   opacity: 0;
 }
 
@@ -12474,9 +12474,9 @@ button[type='submit']:disabled {
   transform: translate(-50%, -50%);
   width: 771rem;
   height: 64rem;
-  font-family: "Pretendard-Bold";
+  font-family: 'Pretendard-Bold';
   font-size: max(72rem, 36px);
-  color: #0042A0;
+  color: #0042a0;
   opacity: 0;
 }
 
@@ -12495,7 +12495,7 @@ button[type='submit']:disabled {
   left: 50%;
   transform: translate(-50%, 0);
   padding: 6rem 12rem;
-  background: #FF0000;
+  background: #ff0000;
   color: #fff;
   border-radius: 20rem;
 }
@@ -12515,7 +12515,7 @@ button[type='submit']:disabled {
   left: 50%;
   transform: translate(-50%, 0);
   padding: 6rem 12rem;
-  background: #FF0000;
+  background: #ff0000;
   color: #fff;
   border-radius: 20rem;
 }
@@ -12537,21 +12537,21 @@ button[type='submit']:disabled {
   top: 0;
   left: unset;
   right: 0;
-  color: #A9A9B2;
+  color: #a9a9b2;
 }
 
 .main-intro .txt2 p.plus {
   position: absolute;
   top: 0;
   left: 300rem;
-  color: #A9A9B2;
+  color: #a9a9b2;
 }
 
 .main-intro .txt2 p.con {
   position: absolute;
   top: 0;
   left: 0;
-  color: #A9A9B2;
+  color: #a9a9b2;
 }
 
 .main-intro .txt2 p.v {
@@ -12564,7 +12564,7 @@ button[type='submit']:disabled {
   position: absolute;
   top: 0;
   left: 167rem;
-  color: #A9A9B2;
+  color: #a9a9b2;
 }
 
 .main-intro .txt2 p.ient {
@@ -12579,94 +12579,94 @@ button[type='submit']:disabled {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #0042A0;
+  color: #0042a0;
   opacity: 0;
 }
 @media screen and (max-width: 1024px) {
   .main-intro {
-      display: block;
+    display: block;
   }
 
   .main-intro .txt1 {
-      width: 90%;
-      height: 64rem;
-      font-size: max(32rem, 20px);
-      line-height: 120%;
+    width: 90%;
+    height: 64rem;
+    font-size: max(32rem, 20px);
+    line-height: 120%;
   }
 
   .main-intro .txt2 {
-      width: 90%;
-      height: 250rem;
-      font-family: "Pretendard-Bold";
-      font-size: max(40rem, 16px);
+    width: 90%;
+    height: 250rem;
+    font-family: 'Pretendard-Bold';
+    font-size: max(40rem, 16px);
   }
 
   .main-intro .txt2 .module {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      width: 132rem;
-      height: 64rem;
-      padding-top: 42rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 132rem;
+    height: 64rem;
+    padding-top: 42rem;
   }
 
   .main-intro .txt2 .module span {
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      padding: 6rem 12rem;
-      background: #FF0000;
-      color: #fff;
-      border-radius: 20rem;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 6rem 12rem;
+    background: #ff0000;
+    color: #fff;
+    border-radius: 20rem;
   }
 
   .main-intro .txt2 p.mo {
-      top: 40rem;
+    top: 40rem;
   }
 
   .main-intro .txt2 p.dule {
-      top: 40rem;
+    top: 40rem;
   }
 
   .main-intro .txt2 p.plus {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .main-intro .txt2 .convenient {
-      top: unset;
-      right: unset;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      width: 200rem;
-      height: 64rem;
-      padding-top: 42rem;
+    top: unset;
+    right: unset;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 200rem;
+    height: 64rem;
+    padding-top: 42rem;
   }
 
   .main-intro .txt2 .convenient span {
-      top: 0;
+    top: 0;
   }
 
   .main-intro .txt2 p.con {
-      top: 40rem;
+    top: 40rem;
   }
 
   .main-intro .txt2 p.v {
-      top: 40rem;
-      left: 72rem;
+    top: 40rem;
+    left: 72rem;
   }
 
   .main-intro .txt2 p.en {
-      top: 40rem;
-      left: 91rem;
+    top: 40rem;
+    left: 91rem;
   }
 
   .main-intro .txt2 p.ient {
-      top: 40rem;
+    top: 40rem;
   }
 }
