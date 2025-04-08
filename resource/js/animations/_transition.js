@@ -59,10 +59,10 @@ async function getScrollbar() {
     globalState.offset = e.offset;
     if (e.offset.y > 0) {
       globalState.isScrolling = true;
-      headerDOM.header.classList.add('--scrolling');
+      // headerDOM.header.classList.add('--scrolling');
     } else {
       globalState.isScrolling = false;
-      headerDOM.header.classList.remove('--scrolling');
+      // headerDOM.header.classList.remove('--scrolling');
     }
   });
 

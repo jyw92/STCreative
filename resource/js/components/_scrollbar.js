@@ -17,15 +17,15 @@ function initScrollBar() {
       }
       return scrollbar.scrollTop;
     },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
-    },
-    pinType: scrollContainer.style.transform ? 'transform' : 'fixed',
+    // getBoundingClientRect() {
+    //   return {
+    //     top: 0,
+    //     left: 0,
+    //     width: window.innerWidth,
+    //     height: window.innerHeight,
+    //   };
+    // },
+    // pinType: scrollContainer.style.transform ? 'transform' : 'fixed',
   });
 
   scrollbar.addListener(({offset}) => {
