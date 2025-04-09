@@ -5003,12 +5003,7 @@ select::placeholder {
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #6635f0 0%,
-    rgba(160, 135, 229, 0.5) 50%,
-    rgba(217, 217, 217, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%, #2b4793 0%, rgba(86, 102, 165, 0.5) 50%, rgba(217, 217, 217, 0) 100%);
 }
 
 .stc-main-vis__hero {
@@ -5886,7 +5881,9 @@ select::placeholder {
   overflow: hidden;
   font-weight: 700;
 }
-
+.stc-prjIntro__box1 h2 span {
+  color: #ff6900;
+}
 .stc-prjIntro__box2 {
   width: 100vw;
   height: 100vh;
