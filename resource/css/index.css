@@ -439,7 +439,7 @@ section {
 
 #footer {
   width: 100vw;
-  height: 300px;
+  height: 15rem;
   background-color: blue;
 }
 
@@ -455,7 +455,7 @@ section {
   align-items: center;
   z-index: 1000;
   padding-inline: 5.5rem;
-  background-color: #fff;
+  background: transparent;
   transition: box-shadow 0.5s;
   border-bottom: 4px solid transparent;
 }
@@ -670,7 +670,7 @@ section {
   z-index: 110;
 }
 .page--home .section02.is-active {
-  background: #000 !important;
+  background: #171717 !important;
   transition: background 0.5s ease;
 }
 .page--home .section02.is-active p {
@@ -760,6 +760,8 @@ section {
   margin: auto;
   width: 100%;
   max-width: 1920px;
+  text-align: center;
+  line-height: 1.3;
 }
 .page--home .section02 .content__text span:nth-child(3n) {
   font-feature-settings: "ss01" 1;
@@ -787,7 +789,7 @@ section {
   color: #222;
   max-width: 700px;
   line-height: 1.6;
-  margin-top: 10vh;
+  margin: 10vh auto 0;
 }
 .page--home .section03 .stc-prjIntro__box1 {
   display: flex;
@@ -815,7 +817,6 @@ section {
 .page--home .section04 .awsome--title {
   width: 100%;
   height: 100vh;
-  font-size: 17rem;
   line-height: 0.9;
   text-align: center;
   padding-top: 30vh;
@@ -825,25 +826,38 @@ section {
 .page--home .section04 .awsome--title .a {
   font-size: 10rem;
 }
-.page--home .section04 .awsome--title .en2 {
-  font-size: 25rem;
+.page--home .section04 .awsome--title .b {
+  font-size: 10rem;
+}
+.page--home .section04 .fixed--text {
+  color: #fff;
+  position: fixed;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.page--home .section04 .fixed--text strong {
+  font-size: 4rem;
+}
+.page--home .section04 .fixed--text p {
+  font-size: 2rem;
 }
 .page--home .section04 .workList {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 20rem;
   margin-top: 20rem;
+  margin-inline: auto 5%;
 }
 .page--home .section04 .workList li {
   width: 45%;
-  border-radius: 2vw;
+  border-radius: 1vw;
   overflow: hidden;
 }
 .page--home .section04 .workList li:nth-child(2n) {
@@ -852,7 +866,10 @@ section {
 .page--home .section04 .workList li a {
   position: relative;
   background-color: #fff;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
 .page--home .section04 .workList li a::after {
   content: "";
@@ -949,15 +966,18 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding-block-start: 1rem;
+  gap: 1rem;
 }
 .page--home .section04 .workList li a .textBox h3 {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: normal;
+  font-weight: 700;
 }
 .page--home .section04 .workList li a .textBox .info {
   display: flex;
   justify-content: space-between;
   color: #888;
+  padding: 0 2rem;
 }
 
 .transition {

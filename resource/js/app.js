@@ -3,11 +3,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 import {Home, Transition, MainIntro} from './animations/index.js';
 import {Cursor, HeaderProgress, DevStart} from './components/index.js';
-
+function waypointEvent() {
+  
+}
 /* -------------------------------------------------------------------------- */
 /*                                     App                                    */
 /* -------------------------------------------------------------------------- */
 async function App() {
+  
+  
   MainIntro();
   await Transition.initTransition();
   Cursor.setCursor();

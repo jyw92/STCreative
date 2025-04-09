@@ -1,8 +1,8 @@
 /* -------------------------------------------------------------------------- */
 /*                                Global State                                */
 /* -------------------------------------------------------------------------- */
-const MAIN_COLOR = 'rgba(102, 54, 239)';
-const TRANSPARENT_COLOR = 'transparent';
+const MAIN_COLOR = "rgba(102, 54, 239)";
+const TRANSPARENT_COLOR = "transparent";
 let scrollContainer;
 
 const globalState = {
@@ -13,7 +13,7 @@ const globalState = {
 };
 
 const headerDOM = {
-  header: document.getElementById('header'),
+  header: document.getElementById("header"),
 };
 
 async function initTransition() {
@@ -27,13 +27,17 @@ async function initTransition() {
 /* -------------------------------------------------------------------------- */
 
 async function getScrollbar() {
-  scrollContainer = document.getElementById('scrollContainer');
+  scrollContainer = document.getElementById("scrollContainer");
   const options = {
     damping: 0.1,
     delegateTo: document,
     alwaysShowTracks: false,
   };
-  const scrollbar = Scrollbar.init(scrollContainer, options);
+  const scrollbar = Scrollbar.init(
+    scrollContainer,
+    options,
+    document.querySelector("#cardMotion3D")
+  );
 
   // scrollerProxy 설정
   ScrollTrigger.scrollerProxy(scrollContainer, {
@@ -56,6 +60,7 @@ async function getScrollbar() {
 
   scrollbar.addListener((e) => {
     ScrollTrigger.update();
+    Waypoint.refreshAll();
     globalState.offset = e.offset;
     if (e.offset.y > 0) {
       globalState.isScrolling = true;
@@ -64,10 +69,23 @@ async function getScrollbar() {
       globalState.isScrolling = false;
       // headerDOM.header.classList.remove('--scrolling');
     }
+    $("#cardMotion3D .content__text").waypoint(
+      function (direction) {
+        if (direction === "down") {
+          $("#cardMotion3D").addClass("is-active");
+        } else {
+          $("#cardMotion3D").removeClass("is-active");
+        }
+      },
+      {
+        offset: '50%',
+        scrollElement: document.querySelector("#cardMotion3D"),
+      }
+    );
   });
 
   // ScrollTrigger의 기본 scroller를 설정
-  ScrollTrigger.defaults({scroller: scrollContainer});
+  ScrollTrigger.defaults({ scroller: scrollContainer });
 
   // ScrollTrigger를 새로고침하여 변경 사항을 반영
   ScrollTrigger.refresh();
@@ -79,10 +97,10 @@ async function getScrollbar() {
 }
 
 function showMarkers(getScrollbar) {
-  if (document.querySelector('.gsap-marker-scroller-start')) {
+  if (document.querySelector(".gsap-marker-scroller-start")) {
     const markers = gsap.utils.toArray('[class *= "gsap-marker"]');
-    scrollbar.addListener(({offset}) => {
-      gsap.set(markers, {marginTop: -offset.y});
+    scrollbar.addListener(({ offset }) => {
+      gsap.set(markers, { marginTop: -offset.y });
     });
   }
 }
