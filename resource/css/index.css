@@ -670,7 +670,7 @@ section {
   z-index: 110;
 }
 .page--home .section02.is-active {
-  background: rgb(23, 23, 23) !important;
+  background: #000e17 !important;
   transition: background 0.5s ease;
 }
 .page--home .section02.is-active p {
