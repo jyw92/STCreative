@@ -747,6 +747,37 @@ section {
   background-position: 50% 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 5vw;
+  position: relative;
+}
+.page--home .section02 .content__img-inner::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+.page--home .section02 .content__img-inner__txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 5rem;
+}
+.page--home .section02 .content__img-inner__txt strong {
+  color: #ff6900;
+  font-size: 8rem;
+  font-weight: 800;
+}
+.page--home .section02 .content__img-inner__txt p {
+  font-size: 6rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
 }
 .page--home .section02 .content__img-inner--hidden {
   opacity: 0;
@@ -759,11 +790,58 @@ section {
   text-transform: uppercase;
   font-size: 64px;
   margin: 0;
-  display: flex;
-  flex-direction: column;
   font-weight: 900;
   line-height: 1;
   padding: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2rem;
+  align-items: center;
+}
+.page--home .section02 .content__text .service--item--title {
+  color: #ff6900;
+  font-size: 8rem;
+  font-weight: 800;
+  grid-column: 1/5;
+  grid-row: 1/2;
+  text-transform: math-auto;
+}
+.page--home .section02 .content__text .service--item {
+  position: relative;
+  margin: 1px 0;
+  padding: 7rem 4rem 6rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1vw;
+  gap: 4rem;
+}
+.page--home .section02 .content__text .service--item > * {
+  letter-spacing: -0.025em;
+  transition: color 0.2s linear;
+}
+.page--home .section02 .content__text .service--item strong {
+  font-size: 2.6rem;
+  color: #bbb;
+}
+.page--home .section02 .content__text .service--item p {
+  font-size: 1.4rem;
+  color: #bbb;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.page--home .section02 .content__text .service--item:hover {
+  transform: translateY(-3rem);
+  background: rgba(255, 255, 255, 0.03);
+  outline: 1px solid #bbb;
+}
+.page--home .section02 .content__text .service--item:hover > strong {
+  color: #fff;
 }
 .page--home .section02 .content__text.content__text--left {
   justify-self: start;
@@ -859,11 +937,11 @@ section {
   gap: 2.5rem;
 }
 .page--home .section04 .fixed--text strong {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #ff6900;
 }
 .page--home .section04 .fixed--text p {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #fff;
 }
 .page--home .section04 .workList {

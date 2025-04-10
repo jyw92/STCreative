@@ -1,8 +1,8 @@
 function devStart() {
   const sectionColors = [
     '#ffffff',
-    '#ffffff',
-    '#ffffff',
+    '#000e17',
+    '#000e17',
     'transparent',
     '#FB9DA7',
     '#FCCCD4',
