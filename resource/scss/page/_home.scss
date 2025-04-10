@@ -173,6 +173,14 @@
   .section02 {
     display: grid;
     z-index: 110;
+    .cardMotion3D--title{
+      @include positionCenter('inline');
+      top: 12vh;
+      span{
+        color: #ff6900;
+        font-size: 9.6rem;
+      }
+    }
     &.is-active {
       background: #000e17 !important;
       transition: background 0.5s ease;
@@ -186,7 +194,6 @@
     }
 
     .content__img {
-      border-radius: 5vw;
       &.content__img--2 {
         --img-width: 100vw;
         --img-height: 100vh;
@@ -233,6 +240,7 @@
 
     .content__img-wrap {
       grid-area: layout;
+      @include flexCenter(column);
     }
 
     .content__img-inner {
@@ -300,7 +308,7 @@
       font-size: 1.8rem;
       font-weight: 400;
       color: #222;
-      max-width: 700px;
+      max-width: 1024px;
       line-height: 1.6;
       margin: 10vh auto 0;
     }
@@ -352,7 +360,6 @@
       }
     }
     .fixed--text {
-      color: #fff;
       position: fixed;
       left: 5%;
       top: 50%;
@@ -362,9 +369,11 @@
       gap: 2.5rem;
       strong {
         font-size: 4rem;
+        color: #ff6900;
       }
       p {
         font-size: 2rem;
+        color: #fff;
       }
     }
     .workList {

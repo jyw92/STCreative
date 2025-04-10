@@ -156,10 +156,30 @@ const cardMotion3D = (itemElement, options) => {
       )
   );
 };
+
+function headerColorSeletor(param){
+  document.querySelectorAll('#header nav ul li a').forEach((item, index) => {
+    item.style.color = param;
+  });
+}
+
 /**
- * 스크롤 아이콘 애니메이션
- * @param {string} selector - 스크롤 아이콘 선택자
+ * 
+ * @param {HTMLElement} element - DOM.API SELECTOR
+ * @param {string} srcPath - STRING 주소값
  */
+function setLogoSrc(element, srcPath) {
+  element.setAttribute('src', srcPath);
+}
+
+
+
+
+/**
+* 스크롤 아이콘 애니메이션
+* @param {string} selector - 스크롤 아이콘 선택자
+*/
+
 function stickScrollIcon(selector) {
   // 스크롤 시 아이콘 위치 조정
   gsap.to(selector, {
@@ -241,11 +261,11 @@ function heroAnimation() {
             id: 'main-ani',
             onEnter: () => {
               setTimeout(() => {
-                document.querySelector('#logo a img').setAttribute('src', '../resource/images/logo_STC_white.svg');
+                setLogoSrc(document.querySelector('#logo a img'), '../resource/images/logo_STC_white.svg')
               }, 500);
             },
             onLeaveBack: () => {
-              document.querySelector('#logo a img').setAttribute('src', '../resource/images/logo_STC.svg');
+              setLogoSrc(document.querySelector('#logo a img'), '../resource/images/logo_STC.svg')
             },
           },
         })
@@ -323,113 +343,6 @@ function heroAnimation() {
     );
 }
 
-function initParticles(target) {
-  tsParticles.load(target, {
-    fpsLimit: 60,
-    backgroundMode: {
-      enable: true,
-      zIndex: -1,
-    },
-    particles: {
-      number: {
-        value: 30,
-        density: {
-          enable: true,
-          area: 800,
-        },
-      },
-      color: {
-        value: ['#3998D0', '#2EB6AF', '#A9BD33', '#FEC73B', '#F89930', '#F45623', '#D62E32'],
-      },
-      destroy: {
-        mode: 'split',
-        split: {
-          count: 1,
-          factor: {
-            value: 5,
-            random: {
-              enable: true,
-              minimumValue: 4,
-            },
-          },
-          rate: {
-            value: 10,
-            random: {
-              enable: true,
-              minimumValue: 5,
-            },
-          },
-          particles: {
-            collisions: {
-              enable: false,
-            },
-            destroy: {
-              mode: 'none',
-            },
-            life: {
-              count: 1,
-              duration: {
-                value: 1,
-              },
-            },
-          },
-        },
-      },
-      shape: {
-        type: 'circle',
-        stroke: {
-          width: 0,
-          color: '#000000',
-        },
-        polygon: {
-          sides: 5,
-        },
-      },
-      opacity: {
-        value: 1,
-        random: false,
-        animation: {
-          enable: false,
-          speed: 1,
-          minimumValue: 0.1,
-          sync: false,
-        },
-      },
-      size: {
-        value: 8,
-        random: {
-          enable: true,
-          minimumValue: 4,
-        },
-        animation: {
-          enable: false,
-          speed: 40,
-          minimumValue: 0.1,
-          sync: false,
-        },
-      },
-      collisions: {
-        enable: true,
-        mode: 'destroy',
-      },
-      move: {
-        enable: true,
-        speed: 7,
-        direction: 'none',
-        random: false,
-        straight: false,
-        out_mode: 'out',
-        attract: {
-          enable: false,
-          rotateX: 600,
-          rotateY: 1200,
-        },
-      },
-    },
-    detectRetina: true,
-  });
-}
-
 function galleryAnimation() {
   const section = document.querySelector('.stc-prjIntro');
   // 원래 로고 경로 저장
@@ -463,19 +376,21 @@ function galleryAnimation() {
             pin: true,
             scrub: true,
             id: 'gallery-ani',
-            onUpdate: (self) => {
-              if (DOM.logo) {
-                DOM.logo.setAttribute('src', '../resource/images/logo_STC.svg');
-              }
-            },
             onEnter: () => {
-              if (DOM.logo) {
-                DOM.logo.setAttribute('src', '../resource/images/logo_STC.svg');
-                document.querySelectorAll('#header nav ul li a').forEach((item, index) => {
-                  item.style.color = '#000';
-                });
-              }
+              setLogoSrc(DOM.logo, '../resource/images/logo_STC_white.svg')
+              headerColorSeletor('#fff')
+              document.querySelector('#header').style.background = 'linear-gradient(rgba(0,0,0,0.4) 0%, rgba(255,255,255,0) 100%)'
             },
+            onLeaveBack:() => {
+              setLogoSrc(DOM.logo, '../resource/images/logo_STC_white.svg')
+              headerColorSeletor('#fff')
+              document.querySelector('#header').style.background = 'linear-gradient(rgba(0,0,0,0.4) 0%, rgba(255,255,255,0) 100%)'
+            },
+            onLeave:() => {
+              setLogoSrc(DOM.logo, '../resource/images/logo_STC_white.svg')
+              headerColorSeletor('#fff')
+              document.querySelector('#header').style.background = 'linear-gradient(rgba(0,0,0,0.4) 0%, rgba(255,255,255,0) 100%)'
+            }
           },
           defaults: {
             duration: 2,
@@ -827,6 +742,18 @@ const scroll = () => {
           start: 'center center',
           end: '+=200%',
           pin: true,
+          onEnterBack:() => {
+            setLogoSrc(document.querySelector('#logo a img'), '../resource/images/logo_STC_white.svg')
+            headerColorSeletor('#fff');
+          },
+          onLeave:() => {
+            setLogoSrc(document.querySelector('#logo a img'), '../resource/images/logo_STC_white.svg')
+            headerColorSeletor('#fff');
+          },
+          onLeaveBack:() => {
+            setLogoSrc(document.querySelector('#logo a img'), '../resource/images/logo_STC_white.svg')
+            headerColorSeletor('#fff');
+          }
         },
         perspective: 400,
       },
@@ -852,5 +779,112 @@ const scroll = () => {
     }
   });
 };
+
+// function initParticles(target) {
+//   tsParticles.load(target, {
+//     fpsLimit: 60,
+//     backgroundMode: {
+//       enable: true,
+//       zIndex: -1,
+//     },
+//     particles: {
+//       number: {
+//         value: 30,
+//         density: {
+//           enable: true,
+//           area: 800,
+//         },
+//       },
+//       color: {
+//         value: ['#3998D0', '#2EB6AF', '#A9BD33', '#FEC73B', '#F89930', '#F45623', '#D62E32'],
+//       },
+//       destroy: {
+//         mode: 'split',
+//         split: {
+//           count: 1,
+//           factor: {
+//             value: 5,
+//             random: {
+//               enable: true,
+//               minimumValue: 4,
+//             },
+//           },
+//           rate: {
+//             value: 10,
+//             random: {
+//               enable: true,
+//               minimumValue: 5,
+//             },
+//           },
+//           particles: {
+//             collisions: {
+//               enable: false,
+//             },
+//             destroy: {
+//               mode: 'none',
+//             },
+//             life: {
+//               count: 1,
+//               duration: {
+//                 value: 1,
+//               },
+//             },
+//           },
+//         },
+//       },
+//       shape: {
+//         type: 'circle',
+//         stroke: {
+//           width: 0,
+//           color: '#000000',
+//         },
+//         polygon: {
+//           sides: 5,
+//         },
+//       },
+//       opacity: {
+//         value: 1,
+//         random: false,
+//         animation: {
+//           enable: false,
+//           speed: 1,
+//           minimumValue: 0.1,
+//           sync: false,
+//         },
+//       },
+//       size: {
+//         value: 8,
+//         random: {
+//           enable: true,
+//           minimumValue: 4,
+//         },
+//         animation: {
+//           enable: false,
+//           speed: 40,
+//           minimumValue: 0.1,
+//           sync: false,
+//         },
+//       },
+//       collisions: {
+//         enable: true,
+//         mode: 'destroy',
+//       },
+//       move: {
+//         enable: true,
+//         speed: 7,
+//         direction: 'none',
+//         random: false,
+//         straight: false,
+//         out_mode: 'out',
+//         attract: {
+//           enable: false,
+//           rotateX: 600,
+//           rotateY: 1200,
+//         },
+//       },
+//     },
+//     detectRetina: true,
+//   });
+// }
 
 export default home;

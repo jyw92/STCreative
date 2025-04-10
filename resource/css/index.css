@@ -457,7 +457,6 @@ section {
   padding-inline: 5.5rem;
   background: transparent;
   transition: box-shadow 0.5s;
-  border-bottom: 4px solid transparent;
 }
 #header nav ul {
   display: flex;
@@ -669,6 +668,16 @@ section {
   display: grid;
   z-index: 110;
 }
+.page--home .section02 .cardMotion3D--title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 12vh;
+}
+.page--home .section02 .cardMotion3D--title span {
+  color: #ff6900;
+  font-size: 9.6rem;
+}
 .page--home .section02.is-active {
   background: #000e17 !important;
   transition: background 0.5s ease;
@@ -680,7 +689,6 @@ section {
   color: #fff;
 }
 .page--home .section02 .content__img {
-  border-radius: 5vw;
   --img-width: 100vw;
   --img-height: 40vh;
   --img-ar: auto;
@@ -726,6 +734,10 @@ section {
 }
 .page--home .section02 .content__img-wrap {
   grid-area: layout;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .page--home .section02 .content__img-inner {
   grid-area: 1/-1;
@@ -788,7 +800,7 @@ section {
   font-size: 1.8rem;
   font-weight: 400;
   color: #222;
-  max-width: 700px;
+  max-width: 1024px;
   line-height: 1.6;
   margin: 10vh auto 0;
 }
@@ -838,7 +850,6 @@ section {
   font-size: 10rem;
 }
 .page--home .section04 .fixed--text {
-  color: #fff;
   position: fixed;
   left: 5%;
   top: 50%;
@@ -849,9 +860,11 @@ section {
 }
 .page--home .section04 .fixed--text strong {
   font-size: 4rem;
+  color: #ff6900;
 }
 .page--home .section04 .fixed--text p {
   font-size: 2rem;
+  color: #fff;
 }
 .page--home .section04 .workList {
   width: 50%;
